@@ -142,9 +142,6 @@ def create_customer(c:createcustomer, db: Session = Depends(get_db)):
     return obj
 
 
-
-
-
 @app.get("/customers/", response_model=List[customerOut])
 def list_customers(db: Session = Depends(get_db)):
     return db.query(Customer).all()
